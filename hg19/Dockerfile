@@ -21,6 +21,9 @@ RUN wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/gfClient -P 
 RUN chmod a+x /opt/BLAT/gfClient
 RUN wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/gfServer -P /opt/BLAT
 RUN chmod a+x /opt/BLAT/gfServer
+RUN apt-get -y install libkrb5-3
+
+CMD /opt/BLAT/gfServer start localhost 55519 /opt/BLAT/hg19.2bit -canStop
 
 
 
