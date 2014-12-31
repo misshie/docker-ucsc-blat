@@ -1,5 +1,5 @@
 #
-# Installing UCSC-BLAT
+# Installing UCSC-BLAT with the hg38 2bit-file
 # http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/
 # Please note that the Blat source and executables are freely available for
 # academic, nonprofit and personal use. Commercial licensing information is
@@ -14,7 +14,6 @@ MAINTAINER MISHIMA, Hiroyuki <missy@be.to>
 RUN apt-get update
 RUN apt-get -y install wget
 RUN mkdir -p /opt/BLAT
-RUN wget --timestamping 'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/hg19.2bit' -P /opt/BLAT
 RUN wget --timestamping 'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.2bit' -P /opt/BLAT
 RUN wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/blat/blat -P /opt/BLAT
 RUN chmod a+x /opt/BLAT/blat
